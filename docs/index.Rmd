@@ -1,0 +1,26 @@
+---
+title: "Incarceration by Race and Gender over Time"
+author: "Rebecca Chan"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(cache = TRUE)
+
+library(knitr)
+setwd("~/stuff/info201/a3-rebecccaa")
+
+source("source/summary.R")
+source("source/chart_time.R")
+```
+
+In this report, I focused on race and gender of incarcerated populations in the US. The latest population data came from 2016, when there was a total of `r format(summary$latest_pop, digits = 6)` incarcerated indivduals in the US. In 2016, the average percentage of women in prison was `r round(summary$avg_percent_female, digits = 2)`% and the average percentage of men was `r round(summary$avg_percent_male, digits = 2)`%. Over time there has been an average change of `r round(summary$avg_change_women, digits = 2)` for women and `r round(summary$avg_change_men, digits = 2)` for men.  
+
+This is a graph showing the average number of incarcerated women in a single state over time. Each line and color represents race.
+
+```{r, echo = FALSE, message = FALSE}
+plot(avg_pop_by_yr_race)
+```
