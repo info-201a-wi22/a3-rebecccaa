@@ -3,7 +3,7 @@ library(dplyr)
 # this function reads the csv and selects and filters down the data to show each
 # county and their prison populations by race and gender
 load_incarceration_data <- function() {
-  read.csv("source/incarceration_trends.csv",
+  read.csv("data/incarceration_trends.csv",
            stringsAsFactors = FALSE
            ) %>%
     select(year, state, county_name, fips, total_pop, urbanicity, region,

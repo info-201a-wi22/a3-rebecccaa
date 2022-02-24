@@ -1,6 +1,6 @@
 library(dplyr)
 library(ggplot2)
-setwd("~/stuff/info201/a3-rebecccaa")
+
 source("source/organized_data.R")
 incarceration <- load_incarceration_data()
 
