@@ -16,21 +16,21 @@ source("source/chart_compare.R")
 source("source/map.R")
 ```
 
-In this report, I focused on race and gender of incarcerated populations in the US. The latest population data came from 2016, when there was a total of `r format(summary$latest_pop, digits = 6)` incarcerated indivduals in the US. In 2016, the average percentage of women in prison was `r round(summary$avg_percent_female, digits = 2)`% and the average percentage of men was `r round(summary$avg_percent_male, digits = 2)`%. Over time there has been an average change of `r round(summary$avg_change_women, digits = 2)` for women and `r round(summary$avg_change_men, digits = 2)` for men.  
+In this report, I focused on race and gender of incarcerated populations in the US. The latest population data came from 2016, when there was a total of `r format(summary$latest_pop, digits = 6)` incarcerated individuals in the US. In 2016, the average percentage of women in prison was `r round(summary$avg_percent_female, digits = 2)`% and the average percentage of men was `r round(summary$avg_percent_male, digits = 2)`%. Over time there has been an average change of `r round(summary$avg_change_women, digits = 2)` for women and `r round(summary$avg_change_men, digits = 2)` for men.  
 
-This is a graph showing the average number of incarcerated women in a single state over time. Each line and color represents race.
+This is a graph showing the average percent of the state female prison population by race. Each different line and color represents the race of those women. I chose to include this data because I wanted to look at female prison populations and how those differ between the races. Interestingly there has been a shift in the percent of the population that is white and black, while the other races have kept lower portions of the population.
 
 ```{r, echo = FALSE, message = FALSE}
 plot(avg_pop_by_yr_race)
 ```
 
-This bar chart shows the number of individuals incarcerated by race, with each column split to show binary gender. This data is from 2016 and is totaled across the data.
+This bar chart shows the number of individuals incarcerated by race, with each column split to show binary gender. This data is from 2016 and is totaled across the data. I thought it would be interesting to look at a recent year and see how the prison population could be divided up. I thought it was interesting to see how small the portions of women are and how that varies between groups.
 
 ```{r, echo = FALSE, message = FALSE}
 plot(total_gender_race)
 ```
 
-The following is a map that shows the areas with the highest percentages of female prison population, across all races. The numbers are give in decimal form, with the lowest percentage being 0.03 or 3% female and the highest being 0.15 or 15%.
+The following is a map that shows the areas with the highest percentages of female prison population, across all races. The numbers are give in decimal form, with the lowest percentage being 0.03 or 3% female (shown in dark purple) and the highest being 0.15 or 15% (light purple). Grey states are representative of states with no data on female prison populations. In all the states, the percentage of women remains quite low, but there is quite a range within that.
 
 ```{r, echo = FALSE, message = FALSE}
 plot(percent_female_map)

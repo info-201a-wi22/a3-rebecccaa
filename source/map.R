@@ -44,7 +44,7 @@ percent_female_map <- ggplot(state_shape) +
   ) +
   blank_theme +
   coord_map() +
-  scale_fill_continuous(low = "#132B43", high = "Red") +
+  scale_fill_continuous(low = "#7A6384", high = "#B85CE0") +
   labs (
     title = "Female Prison Population in each State in 2016",
     subtitle = "Percent (decimal form) female prison populations in each state of US",
